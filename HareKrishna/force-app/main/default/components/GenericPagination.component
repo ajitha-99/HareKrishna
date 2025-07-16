@@ -1,0 +1,32 @@
+<apex:component controller="GenericPaginationCtrl">
+    <!-- to accept inputs-->
+
+    <apex:attribute name="records" type="Sobject[]" description=" To accept the list of records"
+    required="true" assignTo="{!sobjects}"/>
+    <apex:attribute name="fields" type="String[]" description=" To accept the list of fields"
+    required="true"/>
+    <apex:attribute name="title" type="String" description=" To accept the title of the table"
+    default="Records"/>
+
+    <apex:form >
+        <apex:pageBlock title="{!title}" id="pbcmpId">
+            <apex:pageBlockTable value="{!rows}" var="row">
+                <apex:repeat value="{!fields}" var="fld">
+                    <apex:column value="{!row[fld]}"/>
+                </apex:repeat>
+            </apex:pageBlockTable>
+            <!--pagination -->
+            <apex:panelGrid columns="5">
+                <apex:commandButton value="First" action="{!con.first}" disabled="{!!con.hasPrevious}"
+                reRender="pbcmpId" status="actcmpstatid"/>
+                <apex:commandButton value="Previous" action="{!con.Previous}" disabled="{!!con.hasPrevious}"
+                reRender="pbcmpId" status="actcmpstatid"/>
+                <apex:commandButton value="Next" action="{!con.Next}" disabled="{!!con.hasNext}"
+                reRender="pbcmpId" status="actcmpstatid"/>
+                <apex:commandButton value="Last" action="{!con.Last}" disabled="{!!con.hasNext}"
+                reRender="pbcmpId" status="actcmpstatid"/>
+                <apex:actionStatus id="actcmpstatid" startStyle="color:blue;" startText="Fetching"/>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:component>

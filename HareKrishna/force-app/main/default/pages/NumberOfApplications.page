@@ -1,0 +1,13 @@
+<!-- to rollup the applications count and show on the record detail page-->
+
+
+<apex:page standardController="Course__c">
+
+  <apex:variable var="count" value="{!0}"/>
+
+  <apex:repeat value="{!Course__c.Course_Applications__r}" >
+    <apex:variable var="count" value="{!count + 1}"/>
+  </apex:repeat>
+
+   {!count}
+</apex:page>

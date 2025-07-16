@@ -1,0 +1,9 @@
+<apex:page standardController="Course_Application__c">
+<center>
+    <apex:outputPanel style="font-weight:bold;color:royalblue;" 
+    rendered="{!Course_Application__c.Status__c=='Under Conditional Approval'}">
+    Record meets the criteria,please submit for approval
+    </apex:outputPanel>
+
+</center>
+</apex:page>

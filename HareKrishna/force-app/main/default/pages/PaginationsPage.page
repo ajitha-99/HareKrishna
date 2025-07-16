@@ -1,0 +1,7 @@
+<apex:page controller="PaginationsPageCtrl">
+
+    <c:GenericPagination records="{!accounts}" fields="{accFields}" title="Accounts"/>
+    <c:GenericPagination records="{!contacts}" fields="{conFields}" title="Contacts"/>
+    <c:GenericPagination records="{!opportunities}" fields="{oppFields}" title="Opportunities"/>        
+
+</apex:page>

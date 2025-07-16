@@ -1,0 +1,18 @@
+<apex:page standardController="Account" recordSetVar="accounts" lightningStylesheets="true" extensions="standardSetCtrlPageExt">
+    <apex:form >
+    <apex:pageBlock title="standard Set Controller Example" id="pbid">
+    <apex:pageBlockTable value="{!accounts}" var="acc">
+      <apex:column value="{!acc.Name}"/>
+      <apex:column value="{!acc.Industry}" />
+      <apex:column value="{!acc.Rating}" />
+     </apex:pageBlockTable>
+     <apex:panelGrid columns="5" >
+       <apex:commandButton value="First" action="{!first}" disabled="{!!hasPrevious}" rerender="pbid" status="actStatId"/>
+       <apex:commandButton value="Previous" action="{!previous}" disabled="{!!hasPrevious}" rerender="pbid" status="actStatId"/>
+       <apex:commandButton value="Next" action="{!next}" disabled="{!!hasNext}" rerender="pbid" status="actStatId"/>
+       <apex:commandButton value="Last" action="{!last}" disabled="{!!hasNext}" rerender="pbid" status="actStatId"/>
+       <apex:actionStatus startStyle="color:blue;" startText="Fetching...." id="actStatId"/>    
+    </apex:panelGrid>
+      </apex:pageBlock>
+</apex:form>
+</apex:page>

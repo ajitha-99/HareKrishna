@@ -1,0 +1,30 @@
+Javascript is a scripting language and is case sensitive for creating dynamic web page content.
+Javascript is the default scripting language in HTML.
+<script src="myScript.js"></script> to use it in a external application using script tag.
+console logs are logs that we print in the console window where we can test or check your code is working properly or not.
+Remember a console is an object that can access the methods like log() using the dot(.) operator.
+console.log(parameter) display output of the program from the console.log()function.
+console.error(parameter) this method is used to find out errors in the code.
+console.warn(parameter) this method is used to display warning messages to the console.
+variables are to store values and must be identified with unique names. these unique names are called identifiers.
+var -- we should not use now
+const -- when the value or type should not change
+let -- value can be changed or updated  and caanot be redeclared
+you can use typeof operator to find the type of a javascript variable
+when adding a number and a string, javascript will treat the number as a string.
+javascript evaluates expressions from left to right. different sequences can produce different results.
+example: x = 16 + 4 + "Volvo" -> 20Volvo
+truthy and falsy values
+null,undefined,false,NAN,0,-0,..string,document.all are all falsy values and the remaining are considered as truthy vakues.
+Operators: ==, ===, !=, !==, >, <,>=, <=
+
+&& operator -- it checks whether two operands are non-zero, if yes then return the last operand
+|| operator -- it checks whether two operands are non-zero, if yes then return the last operand
+! operator -- it checks whether two operands are non-zero, if yes then return the last operand
+Conditional Operator:
+Function: in javascript function declaration and function expression
+Parameter rules of a function
+. js function definitions do not specify data types for parameters.
+. js functions do not performe type chekcing on the passed arguments.
+.js functions do not check the number of arguments received
+. ES6 allows function parameters to have default values.

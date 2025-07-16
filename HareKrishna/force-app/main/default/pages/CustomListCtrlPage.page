@@ -1,0 +1,18 @@
+<apex:page controller="CustomCtrl" lightningStylesheets="true">
+    <apex:form >
+    <apex:pageBlock title="Custom List Controller Example" id="pbid">
+    <apex:pageBlockTable value="{!accounts}" var="acc">
+      <apex:column value="{!acc.Name}"/>
+      <apex:column value="{!acc.Industry}" />
+      <apex:column value="{!acc.Rating}" />
+     </apex:pageBlockTable>
+     <apex:panelGrid columns="5" >
+     <apex:commandButton value="First" action="{!con.first}" disabled="{!!con.hasPrevious}" rerender="pbid" status="actStatId"/>
+       <apex:commandButton value="Previous" action="{!con.previous}" disabled="{!!con.hasPrevious}" rerender="pbid" status="actStatId"/>
+       <apex:commandButton value="Next" action="{!con.next}" disabled="{!!con.hasNext}" rerender="pbid" status="actStatId"/>
+       <apex:commandButton value="Last" action="{!con.last}" disabled="{!!con.hasNext}" rerender="pbid" status="actStatId"/>
+       <apex:actionStatus startStyle="color:blue;" startText="Fetching...." id="actStatId"/>    
+    </apex:panelGrid> 
+      </apex:pageBlock> 
+</apex:form>
+</apex:page>
