@@ -1,8 +1,0 @@
-<!--Requirement 3
-
-while closing the task along with the status to completed the due date field should be populated to 
-the Todays  -->
-
-
-<apex:page standardController="Task" action="/{!$CurrentPage.parameters.Id}/e?close=1&retURL=
-{!$CurrentPage.parameters.retURL}&tsk4={!Today()}&nooverride=1"/>
